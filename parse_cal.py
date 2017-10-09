@@ -20,13 +20,13 @@ for component in gcal.walk():
 		print "wage: " + wage + '\n'
 
 		if employee_dict.has_key(component.get('summary')):
-                        employee_dict[component.get('summary')] += wage
+                        employee_dict[component.get('summary')] = float(employee_dict[component.get('summary')]) + float(wage)
                 else:
-                        employee_dict[component.get('summary')] = wage
+                        employee_dict[component.get('summary')] = float(wage)
 
 
 print '\n'
 
 for employee in employee_dict:
-        print employee + " " + str(employee_dict[emp]) + '\n'
+        print employee + " " + str(employee_dict[employee]) + '\n'
 cal_ics.close()
